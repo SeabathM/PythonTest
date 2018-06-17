@@ -9,16 +9,12 @@ class Person:
     def ask_age(self):
         while True:
             try:
-                # Note: Python 2.x users should use raw_input, the equivalent of 3.x's input
                 self.age = int(raw_input("What's your age?"))
+                break # we managd to get a correct input, exit the loop
             except ValueError:
                 print("Enter a valid number.")
                 #better try again... Return to the start of the loop
                 continue
-            else:
-                #age was successfully parsed!
-                #we're ready to exit the loop.
-                break
 
     def print_name(self):
         print("Hi {}".format(self.name))
